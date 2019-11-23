@@ -1,0 +1,13 @@
+Package: Statspeare
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "AJ",
+           family = "Fabry",
+           role = c("aut", "cre"),
+           email = "afabry@email.sc.edu",
+           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
+Description: This package contains a collections of functions to analyze data from works of Shakespeare as well as the Early English Books Online database.
+License: 
+Encoding: UTF-8
+LazyData: true
