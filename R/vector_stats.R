@@ -6,6 +6,7 @@
 #' @examples
 #' avg_mean(c(1,2,3,4))
 #' avg_mean(c(1,2,3,4), c(0.1, 0.2, 0.3, 0.4))
+#' @export
 avg_mean = function(x, weights = c()) {
   n = length(x)
   if (length(weights) == 0) {
@@ -23,6 +24,7 @@ avg_mean = function(x, weights = c()) {
 #' @examples
 #' variance(c(1,2,3,4))
 #' variance(c(1,2,3,4,), "unbiased")
+#' @export
 variance = function(x, mode = "biased") {
   n = length(x)
   residuals_x = x - avg_mean(x)
@@ -43,6 +45,7 @@ variance = function(x, mode = "biased") {
 #' @examples
 #' st_deviation(c(1,2,3,4))
 #' st_deviation(c(1,2,3,4,), "unbiased")
+#' @export
 st_deviation = function(x, mode = "biased") {
   results = sqrt(variance(x, mode = mode))
   return(results)
@@ -54,6 +57,7 @@ st_deviation = function(x, mode = "biased") {
 #' @return The z-score of all elements in \code{x}.
 #' @examples
 #' zscore(c(1,2,3,4))
+#' @export
 zscore = function(x) {
   results = (x - avg_mean(x)) / st_deviation(x)
   return(results)
@@ -67,6 +71,7 @@ zscore = function(x) {
 #' @examples
 #' entropy(c(1,2,3,4))
 #' entropy(c(1,2,3,4), T)
+#' @export
 entropy = function(x, normalize = F) {
   p = x / sum(x)
   if (normalize == T) {
@@ -83,6 +88,7 @@ entropy = function(x, normalize = F) {
 #' @return PPMI of all elements in \code{A}.
 #' @examples
 #' ppmi(A)
+#' @export
 ppmi = function(A) {
   pxy = A / sum(A)
   pxpy = rowSums(pxy) %*% t(colSums(pxy))

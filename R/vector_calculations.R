@@ -5,6 +5,7 @@
 #' @return The dot product of \code{x} and \code{y}.
 #' @examples
 #' dot_product(c(1,2,3,4), c(5,6,7,8))
+#' @export
 dot_product = function(x, y) {
   results = sum(x * y, na.rm = T)
   return(results)
@@ -18,6 +19,7 @@ dot_product = function(x, y) {
 #' @examples
 #' covariance(c(1,2,3,4))
 #' covariance(c(1,2,3,4,), "unbiased")
+#' @export
 covariance = function(x, y, mode = "biased") {
   n = length(x)
   residuals_x = x - avg_mean(x)
@@ -38,6 +40,7 @@ covariance = function(x, y, mode = "biased") {
 #' @return Correlation between \code{x} and \code{y}.
 #' @examples
 #' correlation(c(1,2,3,4), c(1,2,3,5))
+#' @export
 correlation = function(x, y) {
   results = covariance(x, y) / sqrt(variance(x) * variance(y))
   return(results)
@@ -50,6 +53,7 @@ correlation = function(x, y) {
 #' @return The relative entropy of \code{x} and \code{y}.
 #' @examples
 #' relative_entropy(c(1,2,3,4), c(5,6,7,8))
+#' @export
 relative_entropy = function(x, y) {
   p = x / sum(x)
   q = y / sum(y)
@@ -64,6 +68,7 @@ relative_entropy = function(x, y) {
 #' @return Cosine similarity between \code{x} and \code{y}.
 #' @examples
 #' cosine_similarity(c(1,2,3,4), c(5,6,7,8))
+#' @export
 cosine_similarity = function(x, y) {
   results = x %*% y/(sqrt(x %*% x) * sqrt(y %*% y))
   return(results)
