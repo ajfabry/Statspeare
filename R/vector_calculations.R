@@ -11,7 +11,7 @@ dot_product = function(x, y) {
   return(results)
 }
 
-#' Calculate the covariance of a vector.
+#' Calculate the covariance of two vectors.
 #'
 #' @param x A vector.
 #' @param mode Biased (default) or unbiased.
