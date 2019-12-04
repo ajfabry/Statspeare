@@ -2,7 +2,26 @@
 % Please edit documentation in R/functions.R
 \name{correlation}
 \alias{correlation}
-\title{Calculate the correlation between two vectors.}
+\title{#' Returns the words most associated with a keyword.
+#'
+#' @param m A matrix.
+#' @param word A word.
+#' @param num_results An integer.
+#' @param method "most_correlated," "most_similar," or "least_divergent."
+#' @return Top words associated with \code{word} in matrix \code{m}.
+#' @examples
+#' top_relations(W, "loue", 20, "most_correlated")
+top_relations = function(m, word, num_results = 10, method = "most_correlated") {
+  if(method == "least_divergent") {
+    results = least_divergent(m, word, num_results)
+  } else if(method == "most_similar") {
+    results = most_similar(m, word, num_results)
+  } else {
+    results = most_correlated(m, word, num_results)
+  }
+  return(results)
+}
+Calculate the correlation between two vectors.}
 \usage{
 correlation(x, y)
 }
@@ -15,6 +34,25 @@ correlation(x, y)
 Correlation between \code{x} and \code{y}.
 }
 \description{
+#' Returns the words most associated with a keyword.
+#'
+#' @param m A matrix.
+#' @param word A word.
+#' @param num_results An integer.
+#' @param method "most_correlated," "most_similar," or "least_divergent."
+#' @return Top words associated with \code{word} in matrix \code{m}.
+#' @examples
+#' top_relations(W, "loue", 20, "most_correlated")
+top_relations = function(m, word, num_results = 10, method = "most_correlated") {
+  if(method == "least_divergent") {
+    results = least_divergent(m, word, num_results)
+  } else if(method == "most_similar") {
+    results = most_similar(m, word, num_results)
+  } else {
+    results = most_correlated(m, word, num_results)
+  }
+  return(results)
+}
 Calculate the correlation between two vectors.
 }
 \examples{

@@ -2,7 +2,24 @@
 % Please edit documentation in R/functions.R
 \name{zscore}
 \alias{zscore}
-\title{Calculate the z-score of all elements in a vector.}
+\title{#' Calculate the words most correlated with an input word.
+#'
+#' @param m A matrix.
+#' @param word An entry in \code{m}.
+#' @param num_results Number of results to display.
+#' @return A data table of words in \code{m} most correlated with \code{x}.
+#' @examples
+#' most_correlated(W, "loue")
+most_correlated = function(m, word, num_results = 10) {
+  if (length(word) == 1) {
+    vec = m[word,]
+  } else {
+    vec = word
+  }
+  results = apply(m, 1, correlation, vec)
+  return(sort(results, decreasing = T)[1:num_results])
+}
+Calculate the z-score of all elements in a vector.}
 \usage{
 zscore(x)
 }
@@ -13,6 +30,23 @@ zscore(x)
 The z-score of all elements in \code{x}.
 }
 \description{
+#' Calculate the words most correlated with an input word.
+#'
+#' @param m A matrix.
+#' @param word An entry in \code{m}.
+#' @param num_results Number of results to display.
+#' @return A data table of words in \code{m} most correlated with \code{x}.
+#' @examples
+#' most_correlated(W, "loue")
+most_correlated = function(m, word, num_results = 10) {
+  if (length(word) == 1) {
+    vec = m[word,]
+  } else {
+    vec = word
+  }
+  results = apply(m, 1, correlation, vec)
+  return(sort(results, decreasing = T)[1:num_results])
+}
 Calculate the z-score of all elements in a vector.
 }
 \examples{
