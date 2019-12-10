@@ -17,11 +17,11 @@ centrality = function(play, measure) {
   ec = round(ec, 7)
 
   if(measure == "betweenness") {
-    print(btw)
+    return(btw)
   } else if(measure == "degree") {
-    print(deg)
+    return(deg)
   } else if(measure == "eigenvector") {
-    print(ec)
+    return(ec)
   } else {
     print("Error: unrecognized centrality measure")
   }
