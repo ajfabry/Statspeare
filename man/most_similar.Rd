@@ -17,8 +17,16 @@ most_similar(m, word, num_results = 10)
 A data table of words in \code{m} most similar to \code{x}.
 }
 \description{
-Calculate the words most similar to an input word.
+The similarity between two vectors is determined as follows:
+\deqn{cos(x,y) = (a • b) / (||a|| ||b||)}
+where (\code{a • b}) is equal to the dot product of \code{a} and \code{b}, and
+(\code{||a|| ||b||}) is equal to the magnitude of \code{a} and \code{b}. This formula returns
+the angle between the two vectors.
 }
 \examples{
 most_similar(W, "loue")
+}
+\references{
+“Word-Vectors and Search Engines.” \emph{Geometry and Meaning}, by Dominic Widdows, CSLI
+Publications, 2004, pp. 132–166.
 }

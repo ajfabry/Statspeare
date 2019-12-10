@@ -19,4 +19,5 @@ Calculate the dot product of two vectors.
 }
 \examples{
 dot_product(c(1,2,3,4), c(5,6,7,8))
+dot_product(W["loue",], W["hate",])
 }

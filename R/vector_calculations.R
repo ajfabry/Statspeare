@@ -5,6 +5,7 @@
 #' @return The dot product of \code{x} and \code{y}.
 #' @examples
 #' dot_product(c(1,2,3,4), c(5,6,7,8))
+#' dot_product(W["loue",], W["hate",])
 #' @export
 dot_product = function(x, y) {
   results = sum(x * y, na.rm = T)

@@ -19,7 +19,11 @@ top_relations(m, word, method = "most correlated", num_results = 10)
 Top words associated with \code{word} in matrix \code{m}.
 }
 \description{
-Returns the words most associated with a keyword.
+\code{top_relations} takes in a matrix, word, association method, and number of
+results and outputs a sorted list of words most associated with the input word based on the
+specified association method.
+
+For a description of each method, type \code{?<method>} in the console.
 }
 \examples{
 top_relations(W, "loue", "most correlated", 20)

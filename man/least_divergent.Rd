@@ -17,9 +17,17 @@ least_divergent(m, word, num_results = 10)
 A data table of elements in \code{m} least divergent from \code{word}.
 }
 \description{
-Calculate the least divergent elements from a word.
+Kullback-Leibler divergence, or relative entropy, between two vectors is
+calculated as follows:
+\deqn{D(p,q) = sum( p(x) * log( p(x) / q(x) ) )}
+While similar to a measurement for distance between vectors, KL-divergence is not a true
+measurement for distance; \eqn{D(p,q) != D(q,p)}.
 }
 \examples{
 least_divergent(W, "loue")
 least_divergent(W, "loue", num_results = 20)
+}
+\references{
+Cover, Thomas M., and Joy A. Thomas. \emph{Elements of Information Theory}.
+Wiley-Interscience, 1991.
 }

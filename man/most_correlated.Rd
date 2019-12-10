@@ -17,8 +17,15 @@ most_correlated(m, word, num_results = 10)
 A data table of words in \code{m} most correlated with \code{x}.
 }
 \description{
-Calculate the words most correlated with an input word.
+The correlation coefficient between vectors \code{x} and \code{y} is calculated
+using \deqn{cor(x,y) = cov(x,y) / sqrt( var(x) * var(y) )} In this function, this formula is
+applied between \code{x} all other word vectors in matrix \code{m}, and the resulting
+correlation coefficients are sorted and returned in the form of a data table.
 }
 \examples{
 most_correlated(W, "loue")
+}
+\references{
+“Displaying and Summarizing Data.” \emph{Introduction to Bayesian Statistics}, by William M.
+Bolstad, 2nd ed., Wiley, 2007, pp. 29–54.
 }
