@@ -20,5 +20,5 @@ A data table of the sorted centrality value for all characters in the \code{play
 measure.
 }
 \examples{
-centrality("Rom", "closeness")
+centrality("Rom", "degree")
 }
