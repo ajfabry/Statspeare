@@ -13,7 +13,8 @@ create_graph(play)
 The network graph of all character relationships in the play.
 }
 \description{
-\code{show_graph} takes a play (\code{play}) and creates the network graph of all character relationships in the play.
+\code{show_graph} takes a play (\code{play}) and creates the network graph of
+all character relationships in the play.
 }
 \examples{
 create_graph("Rom")

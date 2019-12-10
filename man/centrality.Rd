@@ -15,7 +15,9 @@ centrality(play, measure)
 A data table of the sorted centrality value for all characters in the \code{play}.
 }
 \description{
-\code{centrality} takes a play (\code{play}) and a centrality measure (\code{measure}) and returns the list of characters in the play sorted by the centrality measure.
+\code{centrality} takes a play (\code{play}) and a centrality measure
+(\code{measure}) and returns the list of characters in the play sorted by the centrality
+measure.
 }
 \examples{
 centrality("Rom", "closeness")

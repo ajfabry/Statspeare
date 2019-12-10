@@ -1,6 +1,7 @@
 #' Create a network graph of characters in a play.
 #'
-#' @description \code{show_graph} takes a play (\code{play}) and creates the network graph of all character relationships in the play.
+#' @description \code{show_graph} takes a play (\code{play}) and creates the network graph of
+#' all character relationships in the play.
 #' @param play The ID of a play.
 #' @return The network graph of all character relationships in the play.
 #' @examples

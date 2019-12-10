@@ -1,11 +1,13 @@
 #' Calculate the centralities of characters in a play.
 #'
-#' @description \code{centrality} takes a play (\code{play}) and a centrality measure (\code{measure}) and returns the list of characters in the play sorted by the centrality measure.
+#' @description \code{centrality} takes a play (\code{play}) and a centrality measure
+#' (\code{measure}) and returns the list of characters in the play sorted by the centrality
+#' measure.
 #' @param play The ID of a play.
 #' @param measure "betweenness," "degree," or "eigenvector."
 #' @return A data table of the sorted centrality value for all characters in the \code{play}.
 #' @examples
-#' centrality("Rom", "closeness")
+#' centrality("Rom", "degree")
 #' @export
 centrality = function(play, measure) {
 

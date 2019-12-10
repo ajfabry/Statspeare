@@ -14,3 +14,7 @@ LazyData: true
 RoxygenNote: 7.0.1
 Imports: 
     igraph
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
