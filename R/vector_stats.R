@@ -1,8 +1,5 @@
 #' Calculate the weighted mean value of a vector.
 #'
-#' @description Dot product, or scalar product, is calculated by taking the sum of each element
-#' of a vector multiplied with the corresponding element in another vector:
-#' \deqn{DP(x,y) = Σ( x(i) * y(i) )}
 #' @param x A vector.
 #' @param weights An optional vector of weights.
 #' @return The weighted mean of \code{x}.
