@@ -8,7 +8,7 @@
 #' @examples
 #' top_relations(W, "loue", 20, "most_correlated")
 #' @export
-top_relations = function(m, word, num_results = 10, method = "most_correlated") {
+top_relations = function(m, word, method = "most_correlated", num_results = 10) {
   if(method == "least_divergent") {
     results = least_divergent(m, word, num_results)
   } else if(method == "most_similar") {
