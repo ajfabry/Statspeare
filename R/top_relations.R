@@ -2,16 +2,16 @@
 #'
 #' @param m A matrix.
 #' @param word A word.
+#' @param method "most correlated," "most similar," or "least divergent."
 #' @param num_results An integer.
-#' @param method "most_correlated," "most_similar," or "least_divergent."
 #' @return Top words associated with \code{word} in matrix \code{m}.
 #' @examples
-#' top_relations(W, "loue", 20, "most_correlated")
+#' top_relations(W, "loue", "most correlated", 20)
 #' @export
-top_relations = function(m, word, method = "most_correlated", num_results = 10) {
-  if(method == "least_divergent") {
+top_relations = function(m, word, method = "most correlated", num_results = 10) {
+  if(method == "least divergent") {
     results = least_divergent(m, word, num_results)
-  } else if(method == "most_similar") {
+  } else if(method == "most similar") {
     results = most_similar(m, word, num_results)
   } else {
     results = most_correlated(m, word, num_results)

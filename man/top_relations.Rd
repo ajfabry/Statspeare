@@ -4,16 +4,16 @@
 \alias{top_relations}
 \title{Returns the words most associated with a keyword.}
 \usage{
-top_relations(m, word, num_results = 10, method = "most_correlated")
+top_relations(m, word, method = "most correlated", num_results = 10)
 }
 \arguments{
 \item{m}{A matrix.}
 
 \item{word}{A word.}
 
-\item{num_results}{An integer.}
+\item{method}{"most correlated," "most similar," or "least divergent."}
 
-\item{method}{"most_correlated," "most_similar," or "least_divergent."}
+\item{num_results}{An integer.}
 }
 \value{
 Top words associated with \code{word} in matrix \code{m}.
@@ -22,5 +22,5 @@ Top words associated with \code{word} in matrix \code{m}.
 Returns the words most associated with a keyword.
 }
 \examples{
-top_relations(W, "loue", 20, "most_correlated")
+top_relations(W, "loue", "most correlated", 20)
 }
