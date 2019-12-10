@@ -2,7 +2,7 @@
 % Please edit documentation in R/vector_calculations.R
 \name{covariance}
 \alias{covariance}
-\title{Calculate the covariance of a vector.}
+\title{Calculate the covariance of two vectors.}
 \usage{
 covariance(x, y, mode = "biased")
 }
@@ -15,7 +15,7 @@ covariance(x, y, mode = "biased")
 Coariance of \code{x}.
 }
 \description{
-Calculate the covariance of a vector.
+Calculate the covariance of two vectors.
 }
 \examples{
 covariance(c(1,2,3,4))
