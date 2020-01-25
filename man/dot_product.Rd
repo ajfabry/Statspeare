@@ -15,7 +15,11 @@ dot_product(x, y)
 The dot product of \code{x} and \code{y}.
 }
 \description{
-Calculate the dot product of two vectors.
+Dot product, or scalar product, is calculated by taking the sum of each element
+of a vector multiplied with the corresponding element in another vector:
+\deqn{DP(x,y) = Σ( x(i) * y(i) )}
+This function sums up the scalar multiplication of each element in the vectors, and returns
+the results.
 }
 \examples{
 dot_product(c(1,2,3,4), c(5,6,7,8))

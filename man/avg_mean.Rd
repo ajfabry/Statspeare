@@ -15,9 +15,7 @@ avg_mean(x, weights = c())
 The weighted mean of \code{x}.
 }
 \description{
-Dot product, or scalar product, is calculated by taking the sum of each element
-of a vector multiplied with the corresponding element in another vector:
-\deqn{DP(x,y) = Σ( x(i) * y(i) )}
+Calculate the weighted mean value of a vector.
 }
 \examples{
 avg_mean(c(1,2,3,4))

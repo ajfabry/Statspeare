@@ -3,6 +3,8 @@
 #' @description Dot product, or scalar product, is calculated by taking the sum of each element
 #' of a vector multiplied with the corresponding element in another vector:
 #' \deqn{DP(x,y) = Σ( x(i) * y(i) )}
+#' This function sums up the scalar multiplication of each element in the vectors, and returns
+#' the results.
 #' @param x A vector.
 #' @param y A vector.
 #' @return The dot product of \code{x} and \code{y}.
