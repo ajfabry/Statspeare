@@ -1,0 +1,95 @@
+---
+title: "Introduction to Statspeare"
+author: "AJ Fabry"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro_to_Statspeare}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include = FALSE}
+library(Statspeare)
+load(system.file("extdata", "P.rda", package = "Statspeare"))
+load(system.file("extdata", "W.rda", package = "Statspeare"))
+```
+
+## Introduction
+
+Statspeare is an R package developed for use with Dr. Michael Gavin's "Mathematics for Shakespeare" class. It contains many of the methods and tools that students may use for assistance in performing statistical analyses on Shakespeare's plays as well as works from the Early English Books Online database.
+
+##### Installation
+
+If you have `devtools` installed, Statspeare can be installed using `devtools::install_github("ajfabry/Statspeare")` and loaded with `library(Statspeare)`. Otherwise, you'll need to install `devtools` first, using `install.packages("devtools")`, and load it by running `library(devtools)`.
+
+## Methods
+
+##### Loading Data
+
+Loading data from Statspeare can be done using the following command:
+```
+load(system.file("extdata", "W.rda", package = "Statspeare"))
+```
+In this command, `W.rda` can be replaced with any of the data files within Statspeare. Data from outside Statspeare can also be loaded in the global environment for use with any Statspeare function.
+
+##### Vector Statistics
+
+Statspeare can run a number of single-vector statistic calculations, including mean, variance, standard deviation, z-score, entropy, and positive pointwise mutual information (PPMI). To calculate the z-scores of all items within a vector, for instance, one could run:
+```{r}
+zscore(c(1,2,3,4))
+```
+An application of this could be to find out which of Shakespeare's plays use the word "love" the most:
+```{r}
+sort(zscore(P["love",]), decreasing = T)
+```
+
+##### Vector Calculations
+
+Statspeare can also handle several multi-vector calculations, including dot product, covariance, correlation, relative entropy, and cosine similarity. The correlation coefficient between two integer vectors could be determined as follows:
+```{r}
+correlation(c(1,2,3,4), c(1,2,3,5))
+```
+We can use this command to determine the correlation coefficient between two words across EEBO:
+```{r}
+correlation(W["loue",], W["hate",])
+```
+
+##### Word Association
+
+The `top_relations()` function in Statspeare provides the user with the ability to find the list of words that are most associated with an input word. This function accepts four inputs: the matrix `m` across which word associations are calculated, the `word` to be analyzed, an optional association `method`, and an optional `num_results`. `top_relations` supports three word association methods: "most correlated," "most similar," and "least divergent." If one were to find the top 15 words similar in usage to "loue" in EEBO, they could run this command:
+```{r}
+top_relations(W, "loue", "most similar", 15)
+```
+
+##### Centrality Measures
+
+Statspeare provides the unique capability of calculating the most central characters in a play of Shakespeare's by using the `centrality()` function. This function accepts an input of a 3-character ID `play` and a centrality measure `measure`. Statspeare currently supports three different centrality measures: "betweenness," "degree," and "eigenvector." If we wanted to determine the character with the highest number of relations to others, we could run the following:
+```{r}
+centrality("Ham", "degree")
+```
+
+##### Graphing Networks
+
+Lastly, Statspeare provides the user with the ability to display the character network of relationships of any play in the corpus. Relationships in this network are determined using the `character_metadata.rda` file included in Statspeare. Plotting the network graph for a play is as simple as running this command:
+```{r, fig.height = 6, fig.width = 6, fig.align = "center"}
+show_graph("Rom")
+```
+
+## Conclusion
+
+Statspeare can equip any aspiring data analyst of Shakespeare with the tools needed to hit the ground running with quality analysis.
+
+##### Contact Me
+
+This package is developed and supported by AJ Fabry. If you have any questions, comments, or suggestions, I can be reached at afabry@email.sc.edu.
+
+
+
